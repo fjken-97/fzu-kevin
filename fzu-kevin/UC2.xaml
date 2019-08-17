@@ -1,0 +1,316 @@
+﻿<UserControl x:Class="fzu_kevin.UC2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:fzu_kevin"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Height="540" Width="730"
+             >
+    <Grid Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="410"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Rectangle Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="24 14" Fill="White" RadiusX="10" RadiusY="10">
+                    <Rectangle.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFEDEDED" RenderingBias="Quality" ShadowDepth="1"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <Grid Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="5 0" Height="400">
+                    <Grid Width="24" Height="46" Background="#FFFFAF24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34 10">
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="20" Color="#FFE0E0E0" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Grid.Effect>
+                        <materialDesign:PackIcon Kind="ContentCopy" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="3" Foreground="White" Width="10" Height="10"/>
+                    </Grid>
+                    <TextBlock Text="Data" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="30" VerticalAlignment="Top" Foreground="Gray" FontSize="35"/>
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="24 54">
+                        <materialDesign:PackIcon Kind="Account" Foreground="Gray" Width="9" Height="9" VerticalAlignment="Center" Margin="5 0"/>
+                        <TextBlock Text="第一阶桩和第二阶桩长分别为h1、h2，桩端段为h3，第一次变阶和第二次变阶的变径分别为t1、t2，桩顶直径为D，桩端直径为D端，溶洞顶板安全厚度为H" FontSize="9" Foreground="Gray"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="44 38">
+                        <TextBlock Text="Qsk为桩侧土层的极限侧阻力标准值，Qpk极限端阻力标准值，𝛽1 为桩侧摩阻力折减系数，𝛽2为变阶阻力折减系数，" FontSize="9" Foreground="Gray"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+
+
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <TextBlock  Text="h" VerticalAlignment="Center"  FontSize="18" FontFamily="Segoe UI" />
+                            <TextBlock  Text="1 :" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI" Margin="10 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="1" Margin="2" x:Name="h1" materialDesign:HintAssist.Hint="  单位：m" Background="#eee" Padding="1" FontSize="11" Height="30" />
+
+                        <Grid Grid.Column="2">
+                            <TextBlock Text="h" VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                            <TextBlock Text="2 :" VerticalAlignment="Center" FontSize="10" FontFamily="Segoe UI" Margin="10 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="3" Margin="2"  x:Name="h2" materialDesign:HintAssist.Hint="  单位：m" Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                        <Grid Grid.Column="4">
+                            <TextBlock  Text="h" VerticalAlignment="Center"  FontSize="18" FontFamily="Segoe UI" />
+                            <TextBlock  Text="3 :" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI" Margin="10 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="5" Margin="2" x:Name="h3" materialDesign:HintAssist.Hint="  单位：m"  Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                        <Grid Grid.Column="6">
+                            <TextBlock Text="t" VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                            <TextBlock Text="1 :" VerticalAlignment="Center" FontSize="10" FontFamily="Segoe UI" Margin="10 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="7" Margin="2" x:Name="t1" materialDesign:HintAssist.Hint="  单位：m" Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <TextBlock  Text="t" VerticalAlignment="Center"  FontSize="18" FontFamily="Segoe UI" />
+                            <TextBlock  Text="2 :" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI" Margin="10 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="1" Margin="2" x:Name="t2" materialDesign:HintAssist.Hint="  单位：m"  Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                        <Grid Grid.Column="2">
+                            <TextBlock  Text="H " VerticalAlignment="Center"  FontSize="18" FontFamily="Segoe UI" />
+                            <TextBlock  Text="  :" VerticalAlignment="Center"  FontSize="10" FontFamily="Segoe UI" Margin="10 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="3" Margin="2" x:Name="H" materialDesign:HintAssist.Hint="  单位：m"  Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                        <Grid Grid.Column="4">
+                            <TextBlock  Text="Q" VerticalAlignment="Center"  FontSize="18" FontFamily="Segoe UI" />
+                            <TextBlock  Text="sk:" VerticalAlignment="Center"  FontSize="9" FontFamily="Segoe UI" Margin="13 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="5" Margin="2" x:Name="Qsk" materialDesign:HintAssist.Hint="  单位：kN"  Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                        <Grid Grid.Column="6">
+                            <TextBlock  Text="Q" VerticalAlignment="Center"  FontSize="18" FontFamily="Segoe UI" />
+                            <TextBlock  Text="pk:" VerticalAlignment="Center"  FontSize="9" FontFamily="Segoe UI" Margin="13 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="7" Margin="2" x:Name="Qpk" materialDesign:HintAssist.Hint="  单位：kN"  Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid  Grid.Column="0">
+                            <TextBlock Text="D " VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                            <TextBlock  Text=" :" VerticalAlignment="Center"  FontSize="9" FontFamily="Segoe UI" Margin="13 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="1"  Margin="2" materialDesign:HintAssist.Hint="  单位：m" x:Name="d"  Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                        <Grid  Grid.Column="2">
+                            <TextBlock Text="D" VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                            <TextBlock Text="端 :" VerticalAlignment="Center" FontSize="8" FontFamily="Segoe UI" Margin="13 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="3"  Margin="2" materialDesign:HintAssist.Hint="  单位：m" x:Name="dt" Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                        <Grid  Grid.Column="4">
+                            <TextBlock Text="β" VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                            <TextBlock Text="1 :" VerticalAlignment="Center" FontSize="9" FontFamily="Segoe UI" Margin="13 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="5"  Margin="2" materialDesign:HintAssist.Hint="范围: 0.2-0.4" x:Name="pp1" Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                        <Grid  Grid.Column="6">
+                            <TextBlock Text="β" VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                            <TextBlock Text="2 :" VerticalAlignment="Center" FontSize="9" FontFamily="Segoe UI" Margin="13 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="7"  Margin="2" materialDesign:HintAssist.Hint="范围: 0.8-1.0" x:Name="pp2"  Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <TextBlock Text="φ" VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                            <TextBlock Text=" :" VerticalAlignment="Center" FontSize="9" FontFamily="Segoe UI" Margin="13 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="1"  Margin="2"  materialDesign:HintAssist.Hint="  单位：°" x:Name="ff"  Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                        <Grid Grid.Column="2">
+                            <TextBlock Text="h" VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                            <TextBlock Text="4:" VerticalAlignment="Center" FontSize="9" FontFamily="Segoe UI" Margin="13 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="3"  Margin="2"  materialDesign:HintAssist.Hint="  单位：m" x:Name="h4"  Padding="1" Background="#eee" FontSize="11" Height="30" />
+                        
+                        <Grid Grid.Column="4">
+                            <TextBlock Text="t" VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                            <TextBlock Text="3:" VerticalAlignment="Center" FontSize="9" FontFamily="Segoe UI" Margin="13 7 0 0"/>
+                        </Grid>
+                        <TextBox Grid.Column="5"  Margin="2"  materialDesign:HintAssist.Hint="  单位：m" x:Name="t3"  Padding="1" Background="#eee" FontSize="11" Height="30" />
+
+                    </Grid>
+
+                    <Grid Grid.Row="4" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="8">
+                        <Image Source="formula2.jpg" Margin="0,-25,-45,30.5" />
+                    </Grid>
+
+                    <Grid Grid.Row="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="ButtonClear" Grid.Column="1" Margin="2 0 2 10" FontFamily="Segoe UI" Background="#FF3AA0B7" BorderBrush="{x:Null}" Click="ButtonClear_Click" >Clear</Button>
+                        <Button x:Name="ButtonAccept" Grid.Column="2" Margin="2 0 2 10" FontFamily="Segoe UI" Background="#FF3AB740" BorderBrush="{x:Null}" Click="ButtonAccept_Click" >Accept</Button>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.RowSpan="2" Grid.Row="0" Source="pic2.jpg"  Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,30,0,0" Height="145" Width="193"/>
+
+                    <Button Grid.Row="2" Width="84" Height="32" x:Name="ButtonDetail" Margin="83,9.5,83,19.5" FontFamily="Microsoft JhengHei" Background="#FFFFAF24" BorderBrush="{x:Null}" Click="ButtonDetail_Click">计算书</Button>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="410"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="24 14"  Fill="White" RadiusX="10" RadiusY="10">
+                    <Rectangle.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFEDEDED" RenderingBias="Quality" ShadowDepth="1"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+
+                <Grid Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="5 0" Height="140">
+                    <Grid Width="24" Height="46" Background="#FF41A43C" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34 1">
+                        <Grid.Effect >
+                            <DropShadowEffect BlurRadius="20" Color="#FFE0E0E0" RenderingBias="Quality" ShadowDepth="1"/>
+                        </Grid.Effect>
+                    </Grid>
+                    <materialDesign:PackIcon Kind="Store" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40 32" Foreground="White" Width="10" Height="10"/>
+
+                    <TextBlock Text="Answer" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0 15 30 0" VerticalAlignment="Top" Foreground="Gray" FontSize="38"/>
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="28 16">
+                        <materialDesign:PackIcon Kind="Calendar" Foreground="Gray" Width="8" Height="8" VerticalAlignment="Center" Margin="5 0"/>
+                        <TextBlock Text="P为桩顶施加荷载，即桩端传递到溶洞顶板的荷载，P侧为桩侧摩阻力，P变阶为变阶处阻力" FontSize="9" Foreground="Gray"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1" Height="30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0"  Orientation="Horizontal">
+                        <TextBlock Text="P" VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                        <TextBlock Text="侧:" VerticalAlignment="Center" FontSize="7" FontFamily="Segoe UI Black" Margin="0 12 0 0"/>
+                    </StackPanel>
+                    <TextBox x:Name="p_s" Grid.Column="1" Margin="2" Background="#eee" FontSize="8"/>
+
+                    <StackPanel Grid.Column="2"  Orientation="Horizontal">
+                        <TextBlock Text="P" VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                        <TextBlock Text="变阶:" VerticalAlignment="Center" FontSize="6" FontFamily="Segoe UI Black" Margin="0 12 0 0 "/>
+                    </StackPanel>
+                    <TextBox x:Name="p_v" Grid.Column="3" Margin="2" Background="#eee" FontSize="8"/>
+
+                    <StackPanel Grid.Column="4"  Orientation="Horizontal">
+                        <TextBlock Text="P " VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"/>
+                        <TextBlock Text=" :" VerticalAlignment="Center" FontSize="9" FontFamily="Segoe UI" Margin="0 12 0 0"/>
+                    </StackPanel>
+                    <TextBox x:Name="p" Grid.Column="5" Margin="2"  Background="#eee" FontSize="8"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

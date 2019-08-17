@@ -1,0 +1,83 @@
+﻿<Window x:Class="fzu_kevin.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fzu_kevin"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="计算书" MaxHeight="580" MaxWidth="700" MinHeight="560" MinWidth="700"
+        WindowStartupLocation = "CenterScreen" 
+        Icon="icon.ico" Width="700" Height="560"><!--580-->
+    <Grid>
+        <Grid Background="White" Grid.Row="1">
+            <ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        本项目根据实验结果得出的上部荷载P与溶洞顶板安全厚度H的关系，设计软件。以下为软件设计的理论依据：
+                    </TextBlock>
+                    <TextBlock Grid.Row="1" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        由岩溶桩基极限分析理论，结合速度矢量分析图，通过极限上限定理，使得外部功率等于内部损耗功率，可得
+                        <Image  Source="pic1.jpg" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </TextBlock>
+
+                    <TextBlock Grid.Row="2" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        此处的荷载P_桩端不再是桩顶荷载P，由于存在变阶面的关系，部分荷载从变阶处传递到周边土体，实际引起溶洞顶板破坏的荷载为传至桩端的竖向荷载。
+                    </TextBlock>
+                    <TextBlock Grid.Row="3" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        本项目根据实验结果提出一种简便的桩端轴力的计算方法。由桩端阻力以及桩侧摩擦阻力一起分担普通桩基的上部荷载，阶梯型变截面桩存在变截面，可消散轴力，桩顶荷载除由端阻和侧阻外，还由变阶阻一起分担。因此可表示为：
+                         <Image Source="pic2.5.jpg" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </TextBlock>
+                    <TextBlock Grid.Row="4" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        式中：P——桩顶施加荷载；P_端——桩端阻力，即桩端传递到溶洞顶板的荷载；P_侧——桩侧摩阻力；P_变阶——变阶处阻力；
+                    </TextBlock>
+                    <TextBlock Grid.Row="5" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        从而桩荷载可表示为：
+                        <Image Source="pic3.jpg" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </TextBlock>
+                    <TextBlock Grid.Row="6" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        根据桩基极限承载力的计算公式，桩侧摩阻力可表示为：
+                        <Image Source="pic4.jpg" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </TextBlock>
+                    <TextBlock Grid.Row="7" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        其中，q_sk为桩侧土层的极限侧阻力标准值。变阶处阻力可表示为：
+                        <Image Source="pic5.5.jpg" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </TextBlock>
+                    <TextBlock Grid.Row="8" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        其中，q_pk极限端阻力标准值。
+                    </TextBlock>
+                    <TextBlock Grid.Row="9" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        (4)、(5)代入公式(3)中，即可得到P_端关于桩顶荷载P的函数，然后再将其代入式(1)中，即可得到上部荷载P与溶洞顶板安全厚度H的目标函数。
+将其推广到n阶变截面桩的情况，根据上述的推导过程，桩侧摩阻力和变阶处阻力可表示为：
+                        <Image Source="pic6.jpg" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </TextBlock>
+                    <TextBlock Grid.Row="10" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        其中，β_1 ，β_2为变阶阻力折减系数。考录桩周土体会存在松动现象，无法完全发挥极限侧摩阻力及变阶处端阻力，引入折减系数β_1、β_2，其具体可由数值模拟或模型试验确定。
+                    </TextBlock>
+                    <TextBlock Grid.Row="11" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                        将式(6)、(7)代入式(2)中，即可得到P_端关于桩顶荷载P的函数，然后再将其代入式(1)中，得到上部荷载P与溶洞顶板安全厚度H的目标函数：
+                        <Image Source="pic7.jpg" Opacity="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </TextBlock>
+                    <TextBlock Grid.Row="12" Margin="10" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="15">
+                     其中，D_端为桩端直径。
+                    </TextBlock>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
